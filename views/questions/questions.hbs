@@ -1,17 +1,29 @@
-<h1>All Questions</h1>
-
-<p> Here is a list of all questions </p>
+<div class="container">
 <h2>All Questions</h2>
-<a href="/questions/new" class="btn btn-info">Ask a new question</a>
+<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, exercitationem!</p>
 
+<a href="/questions/new" class="btn btn-info">Ask a new question</a>
+</div>
+
+
+
+<div class="container" id="questions">
 {{#each questions}}
 
 
-    
-    <a href="/questions/{{_id}}">{{_id}}</a>
-    <p>{{description}}</p>
-    <p>{{createdAt}}</p>
-    <p>{{checkedTypo}}</p>
+<div class="jumbotron jumbotron-fluid border shadow">
+    <h3><a href="/questions/{{_id}}">{{description}}</a></h3>
 
 
+    {{checkedTypo}}
+
+
+    <div class="d-inline">
+        <p>Quesiton ID: {{_id}}</p>
+    </div>
+
+    <p>Created at: {{createdAt}}</p>
+
+</div> 
 {{/each}}
+</div>
