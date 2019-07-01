@@ -61,10 +61,12 @@ function getQuestion(questionId) {
 }
 
 function addNewQuestion(questionObject) {
+  questionObject.checkedTypo = questionObject.checkedTypo === 'true' ? true : false
   return QuestionCollection.create(questionObject);
 }
 
 function updateQuestion(questionId, questionObject) {
+  questionObject.checkedTypo = questionObject.checkedTypo === 'true' ? true : false
   return QuestionCollection.findByIdAndUpdate(questionId, questionObject)
 }
 
