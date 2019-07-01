@@ -1,0 +1,17 @@
+<h1>All Questions</h1>
+
+<p> Here is a list of all questions </p>
+<h2>All Questions</h2>
+<a href="/questions/new" class="btn btn-info">Ask a new question</a>
+
+{{#each questions}}
+
+
+    
+    <a href="/questions/{{_id}}">{{_id}}</a>
+    <p>{{description}}</p>
+    <p>{{createdAt}}</p>
+    <p>{{checkedTypo}}</p>
+    <p>{{priority}}</p>
+
+{{/each}}

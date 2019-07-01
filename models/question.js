@@ -30,8 +30,10 @@ const QuestionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  status: String,
-  priority: String,
+  checkedTypo: {
+    type: Boolean,
+    default: false
+  }
 })
 
 

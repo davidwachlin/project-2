@@ -1,12 +1,16 @@
-<form method="POST" action="/<TODO: models url here (e.g: /accounts)>">
+<h2>Ask New Question</h2>
+
+<form method="POST" action="/questions">
 
   <!--
     Template for creating input form for a string object key called stringMember
     NOTE: for numeric input fields use `type="number"`
   --->
-  <input type="text" value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" />
+  <label for="description">Describe the problem:</label>
+  <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
-  <input type="checkbox" name="<TODO: model.booleanMember (e.g: account.isActive)" value="true" />
+  <label for="checkedtypo">You've checked typos?</label>
+  <input type="checkbox" name="checkedTypo" id="checkedTypo" />
 
-  <input type="submit" value="Create Shop" />
+  <input type="submit" value="Ask Question" />
 </form>

@@ -57,7 +57,7 @@ questionRouter.post('/', (req, res) => {
 })
 
 questionRouter.get('/new', (req, res) => {
-  res.render("question/newQuestionForm")
+  res.render("questions/newQuestionForm")
 })
 
 questionRouter.get('/:questionId/edit', (req, res) => {
@@ -77,7 +77,7 @@ questionRouter.get('/:questionId', (req, res) => {
     }) 
 })
 
-questionouter.delete('/:questionId', (req, res) => {
+questionRouter.delete('/:questionId', (req, res) => {
   questionApi.deleteQuestion(req.params.questionId)
     .then(() => {
       res.redirect('/questions')
