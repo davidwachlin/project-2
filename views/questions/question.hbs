@@ -1,15 +1,15 @@
 <a href="/questions">Back to Questions</a>
 <div class="jumbotron">
 
-<h2>{{question.title}}</h2>
+    <h2>{{question.title}}</h2>
 
 
-<div id="description">
-    {{question.description}}
-</div>
-<div id="checkedTypoe">
-    {{question.checkedTypo}}
-</div>
+    <div id="description">
+        {{question.description}}
+    </div>
+    <div id="checkedTypoe">
+        {{question.checkedTypo}}
+    </div>
 
     <div class="d-inline">
         <p>Quesiton ID: {{question._id}}</p>
@@ -18,18 +18,32 @@
     <p>Created at: {{question.createdAt}}</p>
 
 
-<a href="/questions/{{question._id}}/edit" class="btn btn-info"> Edit Question</a>
+    <a href="/questions/{{question._id}}/edit" class="btn btn-info"> Edit Question</a>
 
-<a href="/questions/{{question._id}}/answers" class="btn btn-info">Answers</a>
+    <a href="/questions/{{question._id}}/answers" class="btn btn-info">Answers</a>
 </div>
+<a href="/questions/{{question._id}}/answers/new" class="btn btn-info"> Answer Question</a>
 
 {{#each answers}}
+<a href="/questions/{{question._id}}/answers/{{_id}}">
+    <div class="container bg-light mb-3 shadow-sm">
+        <div id="answer">
+            {{answer}}
+        </div>
 
-<div class="answer">
-{{answer}}
-</div>
+        <div id="createdAt">
+            <small class="text-muted">{{createdAt}}</small>
+        </div>
 
-<div class="createdAt">
-{{createdAt}}
-</div>
+        <div id="answerid">
+            <small class="text-muted">{{answer._id}}</small>
+
+
+        </div>
+
+
+
+
+    </div>
+</a>
 {{/each}}

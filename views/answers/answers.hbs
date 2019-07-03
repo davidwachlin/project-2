@@ -1,15 +1,31 @@
 <h2>Answers</h2>
+
+
 {{#each answers}}
+<div class="container bg-light mb-3 shadow-sm">
+    <div id="answer">
+        {{answer}}
+    </div>
 
-<div class="answer">
-{{answer}}
-</div>
+    <div id="createdAt">
+        <small class="text-muted">{{createdAt}}</small>
+    </div>
 
-<div class="createdAt">
-{{createdAt}}
+    <div id="answerid">
+        <small class="text-muted">Answer ID:{{_id}}</small>
+
+
+    </div>
+
+
+    <form action="/questions/{{question._id}}/answers/{{_id}}?_method=DELETE" method="post">
+
+        <input class="btn btn-outline-danger" type="submit" value="Delete Answer" />
+
+    </form>
+
 </div>
 {{/each}}
-
 
 
 

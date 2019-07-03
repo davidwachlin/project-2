@@ -16,6 +16,7 @@ const express = require('express')
  * 
  */
 const answerApi = require('../models/answer.js')
+const questionApi = require('../models/question.js')
 /* Step 3 
  * 
  * Create a new router.
@@ -49,19 +50,23 @@ answerRouter.get('/', (req, res) => {
  })
 
  answerRouter.get('/new', (req, res) => {
-  res.render("answers/newAnswerForm")
+  questionApi.getQuestion(req.params.questionId)
+    .then((question) => {
+      res.render("answers/newAnswerForm", {question})
+    })
 })
 
 answerRouter.post('/', (req, res) => {
   req.body.questionId = req.params.questionId
   answerApi.addNewAnswer(req.body)
     .then(() => {
-      res.send("answer created")
+      res.redirect(`/questions/${req.params.questionId}`)
     })
 })
 
 
 answerRouter.get('/:answerId', (req, res) => {
+
   answerApi.getAnswer(req.params.answerId)
     .then((answer) => {
       res.send(answer)
@@ -71,7 +76,7 @@ answerRouter.get('/:answerId', (req, res) => {
 answerRouter.delete('/:answerId', (req, res) => {
   answerApi.deleteAnswer(req.params.answerId)
     .then(() => {
-      res.send('answer deleted')
+      res.redirect(`/questions/${req.params.questionId}`)
     })
 })
 

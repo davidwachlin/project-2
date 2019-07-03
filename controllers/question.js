@@ -35,11 +35,11 @@ const questionRouter = express.Router()
 /* Step 5
  *
  * TODO: delete this handler; it's just a sample
- */ 
+ */
 questionRouter.get('/', (req, res) => {
   questionApi.getAllQuestions()
     .then((questions) => {
-      res.render('questions/questions', {questions})
+      res.render('questions/questions', { questions })
     })
     .catch((err) => {
       res.send(err)
@@ -63,7 +63,7 @@ questionRouter.get('/new', (req, res) => {
 questionRouter.get('/:questionId/edit', (req, res) => {
   questionApi.getQuestion(req.params.questionId)
     .then((question) => {
-      res.render('questions/editQuestionForm', {question})
+      res.render('questions/editQuestionForm', { question })
     })
 })
 
@@ -72,13 +72,34 @@ questionRouter.get('/:questionId', (req, res) => {
     .then((question) => {
       answerApi.getAnswersByQuestionId(question._id)
         .then((answers) => {
-          res.render('questions/question', {question, answers})
+          res.render('questions/question', { question, answers })
         })
     })
     .catch((err) => {
       res.send(err)
-    }) 
+    })
 })
+
+questionRouter.put('/:questionId', (req, res) => {
+  questionApi.updateQuestion(req.params.questionId, req.body)
+    .then(() => {
+      res.redirect(`/questions/${req.params.questionId}`)
+    })
+})
+
+
+
+
+
+//       questionApi.getQuestion(req.params.questionId)
+//         .then((question) => {
+//           answerApi.getAnswersByQuestionId(question._id)
+//             .then((answers) => {
+//               res.render('questions/question', { question, answers })
+//             })
+//         })
+//     })
+// })
 
 questionRouter.delete('/:questionId', (req, res) => {
   questionApi.deleteQuestion(req.params.questionId)
