@@ -18,6 +18,8 @@ const methodOverride = require('method-override')
  *
  */
 const { questionRouter } = require('./controllers/question.js')
+const { userRouter } = require('./controllers/user.js')
+const { answerRouter } = require('./controllers/answer.js')
 
 
 /* Step 3
@@ -61,7 +63,9 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+// app.use('users/', userRouter)
 app.use('/questions', questionRouter)
+app.use('/questions/:questionId/answers', answerRouter)
 
 /* Step 5
  *

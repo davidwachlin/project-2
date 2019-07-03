@@ -1,3 +1,35 @@
-<h1>This is a sample hbs file</h1>
+<a href="/questions">Back to Questions</a>
+<div class="jumbotron">
 
-<p> please delete this when you start your project. </p>
+<h2>{{question.title}}</h2>
+
+
+<div id="description">
+    {{question.description}}
+</div>
+<div id="checkedTypoe">
+    {{question.checkedTypo}}
+</div>
+
+    <div class="d-inline">
+        <p>Quesiton ID: {{question._id}}</p>
+    </div>
+
+    <p>Created at: {{question.createdAt}}</p>
+
+
+<a href="/questions/{{question._id}}/edit" class="btn btn-info"> Edit Question</a>
+
+<a href="/questions/{{question._id}}/answers" class="btn btn-info">Answers</a>
+</div>
+
+{{#each answers}}
+
+<div class="answer">
+{{answer}}
+</div>
+
+<div class="createdAt">
+{{createdAt}}
+</div>
+{{/each}}

@@ -22,6 +22,10 @@ const mongoose = require('./connection.js')
 //})
 
 const QuestionSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true
@@ -56,6 +60,10 @@ function getAllQuestions() {
   return QuestionCollection.find();
 }
 
+function getQuestionByUserId(userId) {
+  return QuestionCollection.find({userId: userId})
+}
+
 function getQuestion(questionId) {
   return QuestionCollection.findById(questionId)
 }
@@ -70,7 +78,7 @@ function updateQuestion(questionId, questionObject) {
   return QuestionCollection.findByIdAndUpdate(questionId, questionObject)
 }
 
-function deleteQuestion(QuestionId) {
+function deleteQuestion(questionId) {
   return QuestionCollection.findByIdAndDelete(questionId)
 }
 
@@ -80,6 +88,7 @@ function deleteQuestion(QuestionId) {
  * object
  */
 module.exports = {
+  getQuestionByUserId,
   getAllQuestions,
   getQuestion,
   addNewQuestion,

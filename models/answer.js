@@ -22,16 +22,12 @@ const mongoose = require('./connection.js')
 //  name: String
 //})
 const AnswerSchema = new mongoose.Schema({
-  description: {
-    type: String,
-    required: true
-  },
+  answer: String,
   createdAt: {
     type: Date,
     default: Date.now
   },
-  status: String,
-  priority: String,
+  questionId: mongoose.Types.ObjectId
 })
 
 
@@ -48,15 +44,35 @@ const AnswerCollection = mongoose.model('Answer', AnswerSchema)
  * TODO: delete this it's just a sample
  *
  */
-function getHelloWorldString() {
-  return 'hello world'
+function getAnswersByQuestionId(questionId) {
+  return AnswerCollection.find({questionId: questionId});
 }
 
+function getAnswer(answerId) {
+  return AnswerCollection.findById(answerId)
+}
+
+function addNewAnswer(answerObject) {
+  return AnswerCollection.create(answerObject);
+}
+
+function updateAnswer(answerId, answerObject) {
+  return AnswerCollection.findByIdAndUpdate(answerId, answerObject)
+}
+
+function deleteAnswer(answerId) {
+  return AnswerCollection.findByIdAndDelete(answerId)
+}
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
  * object
  */
 module.exports = {
-  getHelloWorldString
+  getAnswersByQuestionId,
+  getAnswer,
+  addNewAnswer,
+  updateAnswer,
+  deleteAnswer
+
 }

@@ -29,17 +29,16 @@ const mongoose = require('./connection.js')
 //  name: String
 //})
 const UserSchema = new mongoose.Schema({
-  description: {
+  username: {
     type: String,
     required: true
   },
   createdAt: {
     type: Date,
     default: Date.now
-  },
-  status: String,
-  priority: String,
+  }
 })
+
 
 
 
@@ -56,15 +55,35 @@ const UserCollection = mongoose.model('User', UserSchema)
  * TODO: delete this it's just a sample
  *
  */
-function getHelloWorldString() {
-  return 'hello world'
+function getAllUsers() {
+  return UserCollection.find();
 }
 
+
+function getUser(userId) {
+  return UserCollection.findById(userId)
+}
+
+function addNewUser(userObject) {
+  return UserCollection.create(userObject);
+}
+
+function updateUser(userId, userObject) {
+  return UserCollection.findByIdAndUpdate(userId, userObject)
+}
+
+function deleteUser(userId) {
+  return UserCollection.findByIdAndDelete(userId)
+}
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
  * object
  */
 module.exports = {
-  getHelloWorldString
+  getAllUsers,
+  getUser,
+  addNewUser,
+  updateUser,
+  deleteUser
 }

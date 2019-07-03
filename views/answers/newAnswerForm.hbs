@@ -1,0 +1,15 @@
+<form method="POST" action="/questions/{{question._id}}/answers">
+
+  <!--
+    Template for creating input form for a string object key called stringMember
+    NOTE: for numeric input fields use `type="number"`
+  --->
+  <div class="form-group">
+    <label for="answer">Answer:</label>
+    <textarea class="form-control" name="answer" id="answer" cols="30" rows="10"></textarea>
+
+  </div>
+
+
+  <input type="submit" class="btn btn-info" value="Submit Answer" />
+</form>

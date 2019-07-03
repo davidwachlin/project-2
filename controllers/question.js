@@ -16,7 +16,7 @@ const express = require('express')
  * 
  */
 const questionApi = require('../models/question.js')
-
+const answerApi = require('../models/answer.js')
 /* Step 3 
  * 
  * Create a new router.
@@ -61,7 +61,7 @@ questionRouter.get('/new', (req, res) => {
 })
 
 questionRouter.get('/:questionId/edit', (req, res) => {
-  questionApi.getQuestion(req.paramas.questionId)
+  questionApi.getQuestion(req.params.questionId)
     .then((question) => {
       res.render('questions/editQuestionForm', {question})
     })
@@ -70,7 +70,10 @@ questionRouter.get('/:questionId/edit', (req, res) => {
 questionRouter.get('/:questionId', (req, res) => {
   questionApi.getQuestion(req.params.questionId)
     .then((question) => {
-      res.render('questions/question', {question})
+      answerApi.getAnswersByQuestionId(question._id)
+        .then((answers) => {
+          res.render('questions/question', {question, answers})
+        })
     })
     .catch((err) => {
       res.send(err)
