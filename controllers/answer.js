@@ -39,21 +39,21 @@ const answerRouter = express.Router({ mergeParams: true })
 /* Step 5
  *
  * TODO: delete this handler; it's just a sample
- */ 
+ */
 
 
 answerRouter.get('/', (req, res) => {
   const questionId = req.params.questionId
   answerApi.getAnswersByQuestionId(questionId)
     .then((answers) => {
-      res.render('answers/answers', {answers, questionId})
+      res.render('answers/answers', { answers, questionId })
     })
- })
+})
 
- answerRouter.get('/new', (req, res) => {
+answerRouter.get('/new', (req, res) => {
   questionApi.getQuestion(req.params.questionId)
     .then((question) => {
-      res.render("answers/newAnswerForm", {question})
+      res.render("answers/newAnswerForm", { question })
     })
 })
 
@@ -82,12 +82,30 @@ answerRouter.delete('/:answerId', (req, res) => {
     })
 })
 
+answerRouter.get('/:answerId/edit', (req, res) => {
+  questionApi.getQuestion(req.params.questionId)
+    .then((question) => {
+      answerApi.getAnswer(req.params.answerId)
+        .then((answer) => {
+          res.render('answers/editAnswerForm', { answer, question })
+        })
+    })
+  });
 
-/* Step 6
- *
- * Export the router from the file.
- *
- */
-module.exports = {
-  answerRouter
-}
+
+
+  answerRouter.put('/:answerId', (req, res) => {
+    answerApi.updateAnswer(req.params.answerId, req.body)
+      .then(() => {
+        res.redirect(`/questions/${req.params.questionId}`)
+      })
+  })
+
+  /* Step 6
+   *
+   * Export the router from the file.
+   *
+   */
+  module.exports = {
+    answerRouter
+  }

@@ -1,0 +1,32 @@
+<div class="jumbotron">
+
+  <h2>{{question.title}}</h2>
+  <div id="description">
+    {{question.description}}
+  </div>
+  <div id="checkedTypoe">
+    {{question.checkedTypo}}
+  </div>
+
+  <div class="d-inline">
+    <p>Quesiton ID: {{question._id}}</p>
+  </div>
+
+  <p>Created at: {{question.createdAt}}</p>
+</div>
+
+
+
+
+
+<form method="POST" action="/questions/{{question._id}}/answers/{{answer._id}}?_method=PUT">
+  <div class="form-group">
+    <h4>Edit Answer</h4>
+    <label for="answer">Answer:</label>
+    <textarea class="form-control" name="answer" id="answer" cols="30" rows="10">{{answer.answer}}</textarea>
+
+  </div>
+
+
+  <input type="submit" class="btn btn-info" value="Submit Answer" />
+</form>
