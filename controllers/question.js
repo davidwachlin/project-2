@@ -47,6 +47,7 @@ questionRouter.get('/', (req, res) => {
 })
 
 questionRouter.post('/', (req, res) => {
+  console.log(req, res);
   questionApi.addNewQuestion(req.body)
     .then(() => {
       res.redirect("/questions")

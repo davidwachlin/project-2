@@ -43,9 +43,10 @@ const answerRouter = express.Router({ mergeParams: true })
 
 
 answerRouter.get('/', (req, res) => {
-  answerApi.getAnswersByQuestionId(req.params.questionId)
+  const questionId = req.params.questionId
+  answerApi.getAnswersByQuestionId(questionId)
     .then((answers) => {
-      res.render('answers/answers', {answers})
+      res.render('answers/answers', {answers, questionId})
     })
  })
 
@@ -74,6 +75,7 @@ answerRouter.get('/:answerId', (req, res) => {
 })
 
 answerRouter.delete('/:answerId', (req, res) => {
+  console.log(req.headers);
   answerApi.deleteAnswer(req.params.answerId)
     .then(() => {
       res.redirect(`/questions/${req.params.questionId}`)

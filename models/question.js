@@ -57,6 +57,7 @@ const QuestionCollection = mongoose.model('Question', QuestionSchema)
  *
  */
 function getAllQuestions() {
+  console.log('get all questions function');
   return QuestionCollection.find();
 }
 
