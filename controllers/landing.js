@@ -13,9 +13,6 @@ const landingRouter = express.Router()
 
 //shouldn't need view all user routre
 landingRouter.get('/', (req, res) => {
-      res.render('landing/landing')
+    res.render('landing/landing')
 
-    })
-    .catch((err) => {
-      res.send(err)
-    })
+})
