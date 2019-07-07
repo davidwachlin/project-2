@@ -1,32 +1,35 @@
 <div class="container">
-<h2>All Questions</h2>
-<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, exercitationem!</p>
+    <h2>All Questions</h2>
+    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, exercitationem!</p>
 
-<a href="/questions/new" class="btn btn-info">Ask a new question</a>
-<a href="/users/new" class="btn btn-info">New User</a>
+    <a href="/questions/new" class="btn btn-info">Ask a new question</a>
+    <a href="/users/new" class="btn btn-info">New User</a>
 </div>
 
 
 
 <div class="container" id="questions">
-{{#each questions}}
+    {{#each questions}}
 
 
-<div class="jumbotron jumbotron-fluid border shadow">
-    <h3><a href="/questions/{{_id}}">{{title}}</a></h3>
-<div id="description">
-    {{description}}
-</div>
-<div id="checkedTypoe">
-    {{checkedTypo}}
-</div>
+    <div class="jumbotron jumbotron-fluid border shadow">
+        <h3><a href="/questions/{{_id}}">{{title}}</a></h3>
+        <div id="description">
+            {{description}}
+        </div>
+        <div id="checkedTypoe">
+            {{checkedTypo}}
+        </div>
 
-    <div class="d-inline">
-        <p>Quesiton ID: {{_id}}</p>
+        <div id="questioniddiv">
+            <small class="text-muted">Quesiton ID: {{_id}}</small>
+        </div>
+        <div id="createdondiv">
+            <small class="text-muted">Created on: {{createdAt}}</small>
+        </div>
+
+
+
     </div>
-
-    <p>Created at: {{createdAt}}</p>
-
-</div> 
-{{/each}}
+    {{/each}}
 </div>

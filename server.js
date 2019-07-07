@@ -22,6 +22,7 @@ const methodOverride = require('method-override')
 const { questionRouter } = require('./controllers/question.js')
 const { userRouter } = require('./controllers/user.js')
 const { answerRouter } = require('./controllers/answer.js')
+const { landingRouter } = require('./controllers/landing.js')
 
 
 /* Step 3
@@ -71,6 +72,7 @@ app.set('view engine', 'hbs')
 app.use('/questions', questionRouter);
 app.use('/questions/:questionId/answers', answerRouter);
 app.use('/users', userRouter);
+app.use('/', landingRouter)
 /* Step 5
  *
  * Set the port the server is to run on
