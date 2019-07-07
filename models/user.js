@@ -10,6 +10,7 @@
  *
  */
 const mongoose = require('./connection.js')
+const passportLocalMongoose = require("passport-local-mongoose")
 
 /* Step 1 alternative
  *
@@ -29,15 +30,9 @@ const mongoose = require('./connection.js')
 //  name: String
 //})
 const UserSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
-})
+  username: String,
+  password: String
+});
 
 
 
@@ -87,3 +82,5 @@ module.exports = {
   updateUser,
   deleteUser
 }
+
+//Usercollection exported?

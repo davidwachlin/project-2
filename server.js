@@ -68,9 +68,9 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 // app.use('users/', userRouter)
-app.use('/questions', questionRouter)
-app.use('/questions/:questionId/answers', answerRouter)
-
+app.use('/questions', questionRouter);
+app.use('/questions/:questionId/answers', answerRouter);
+app.use('/users', userRouter);
 /* Step 5
  *
  * Set the port the server is to run on

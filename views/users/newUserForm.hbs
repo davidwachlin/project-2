@@ -1,6 +1,6 @@
-<h2>Ask New Question</h2>
+<h2>Create User Account</h2>
 
-<form method="POST" action="/questions">
+<form method="POST" action="/users">
 
   <!--
     Template for creating input form for a string object key called stringMember
@@ -8,9 +8,15 @@
   --->
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" name="username" id="username" placeholder= "johnsmith123" class="form-control">
+    <input type="text" name="username" id="username" placeholder= "enter username" class="form-control">
      
   </div>
 
-<input type="submit" class="btn btn-info" value="Ask Question" />
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" placeholder= "password" class="form-control">
+     
+  </div>
+
+<input type="submit" class="btn btn-info" value="Create Account" />
 </form>

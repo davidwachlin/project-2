@@ -17,6 +17,7 @@ const express = require('express')
  */
 const userApi = require('../models/user.js')
 
+
 /* Step 3 
  * 
  * Create a new router.
@@ -37,7 +38,7 @@ userRouter.get('/', (req, res) => {
   userApi.getAllUsers()
     .then((users) => {
       res.render('users/users', {users})
-      res.send({users})
+
     })
     .catch((err) => {
       res.send(err)
@@ -57,6 +58,8 @@ userRouter.post('/', (req, res) => {
 userRouter.get('/new', (req, res) => {
   res.render("users/newUserForm")
 })
+
+
 
 userRouter.get('/:userId/edit', (req, res) => {
   userApi.getUser(req.params.userId)

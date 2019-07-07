@@ -1,31 +1,32 @@
 <div class="container">
-<h2>All Uswers</h2>
-<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, exercitationem!</p>
+    <h2>All Users</h2>
+    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, exercitationem!</p>
 
-<a href="/users/new" class="btn btn-info">Ask a new question</a>
+    <a href="/questions" class="btn btn-info">Questions</a>
 </div>
 
 
 
-<div class="container" id="questions">
-{{#each users}}
+<div class="container" id="users">
+    {{#each users}}
 
 
-<div class="jumbotron jumbotron-fluid border shadow">
-    <h3><a href="/questions/{{_id}}">{{title}}</a></h3>
-<div id="description">
-    {{description}}
-</div>
-<div id="checkedTypoe">
-    {{checkedTypo}}
-</div>
+    <div class="jumbotron jumbotron-fluid border shadow">
+        <div id="username">
+            {{username}}
+        </div>
 
-    <div class="d-inline">
-        <p>Quesiton ID: {{_id}}</p>
+    <div class="d-inline" id="userid">
+        <p>User ID: {{_id}}</p>
     </div>
+    <form action="/users/{{_id}}?_method=DELETE" method="post">
 
-    <p>Created at: {{createdAt}}</p>
+        <input class="btn btn-outline-danger" type="submit" value="Delete User" />
 
-</div> 
-{{/each}}
+    </form>
+
+
+
+    </div>
+    {{/each}}
 </div>

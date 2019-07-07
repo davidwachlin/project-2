@@ -25,22 +25,22 @@
 <a href="/questions/{{question._id}}/answers/new" class="btn btn-info"> Answer Question</a>
 
 {{#each answers}}
-    <div class="container bg-light mb-3 shadow-sm">
-        <div id="answer">
-            {{answer}}
-        </div>
+<div class="container bg-light mb-3 shadow-sm">
+    <div id="answer">
+        {{answer}}
+    </div>
 
-        <div id="createdAt">
-            <small class="text-muted">{{createdAt}}</small>
-        </div>
+    <div id="createdAt">
+        <small class="text-muted">{{createdAt}}</small>
+    </div>
 
-        <div id="answerid">
-            <small class="text-muted">{{_id}}</small>
-        </div>
-        <p>
-            Answer: {{_id}},
-            Question: {{questionId}}
-        </p>
+    <div id="answerid">
+        <small class="text-muted">{{_id}}</small>
+    </div>
+    <p>
+        Answer: {{_id}},
+        Question: {{questionId}}
+    </p>
 
     <form action="/questions/{{questionId}}/answers/{{_id}}?_method=DELETE" method="post">
 
@@ -48,7 +48,7 @@
 
     </form>
 
-<a href="/questions/{{questionId}}/answers/{{_id}}/edit" class="btn btn-info">Edit Answer</a>
-    </div>
+    <a href="/questions/{{questionId}}/answers/{{_id}}/edit" class="btn btn-info">Edit Answer</a>
+</div>
 
 {{/each}}
