@@ -19,4 +19,3 @@ landingRouter.get('/', (req, res) => {
     .catch((err) => {
       res.send(err)
     })
-})
