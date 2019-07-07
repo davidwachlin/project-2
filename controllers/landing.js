@@ -16,3 +16,7 @@ landingRouter.get('/', (req, res) => {
     res.render('landing/landing')
 
 })
+
+module.exports = {
+    landingRouter
+  }
