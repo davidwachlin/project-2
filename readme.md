@@ -2,7 +2,8 @@
 # Project 2 
 
 ##Pestr
-A sorta kinda stackoverflow-type thing.
+
+###A sorta kinda stackoverflow-type thing.
 
 
 ## Links to Deployed App and Project Board
