@@ -10,7 +10,9 @@ A sorta kinda stackoverflow-type thing.
 - [Project Board](https://trello.com/b/LUwO7hux/sei-project-2)
 
 ## Wireframe
-![Image](images/wireframe.jpg?raw=true)
+![Image](images/wireframe1.png?raw=true)
+![Image](images/wireframe2.png?raw=true)
+![Image](images/wireframe3.png?raw=true)
 
 
 ## ERD
