@@ -1,16 +1,20 @@
 <div class="my-3">
-    <div class="card bg-light text-center rounded shadow">
+    <div class="card bg-light border text-center rounded shadow">
 
         <div class="card-body">
             <h4 class="card-title">{{question.title}}</h4>
             <div id="description">
                 <p class="card-text">{{question.description}}</p>
             </div>
+            <div class="">
+                <small class="text-muted">Quesiton ID: {{question._id}}</small>
+            </div>
+            <div class="">
+                <small class="text-muted">Created at: {{question.createdAt}}</small>
+            </div>
+<a href="/questions/{{question._id}}/edit" class="btn btn-outline-info"> Edit Question</a>
 
-            <small class="text-muted">Quesiton ID: {{question._id}}</small>
 
-
-            <small class="text-muted">Created at: {{question.createdAt}}</small>
 
         </div>
     </div>
@@ -20,23 +24,19 @@
 
 
 
-<div id="checkedTypoe">
-    {{question.checkedTypo}}
-</div>
-
-<div class="d-inline">
-    <p>Quesiton ID: {{question._id}}</p>
-</div>
-
-<p>Created at: {{question.createdAt}}</p>
 
 
-<a href="/questions/{{question._id}}/edit" class="btn btn-info"> Edit Question</a>
 
-<a href="/questions/{{question._id}}/answers" class="btn btn-info">Answers</a>
-</div>
+
+
+
 <a href="/questions/{{question._id}}/answers/new" class="btn btn-info"> Answer Question</a>
 
+
+<h4><a href="/questions/{{question._id}}/answers" >Answers</a></h4>
+
+
+</div>
 {{#each answers}}
 <div class="container bg-light mb-3 shadow-sm">
     <div id="answer">
