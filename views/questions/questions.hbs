@@ -1,9 +1,9 @@
-<div class=" text-center mt-3">
+<div class="text-center text-light mt-3">
     <h2>All Questions</h2>
 
     <div class="mt-4">
-        <a href="/questions/new" class="btn btn-outline-dark btn-sm">Ask a new question</a>
-        <a href="/users/new" class="btn btn-outline-dark btn-sm">New User</a>
+        <a href="/questions/new" class="btn btn-outline-light">Ask a new question</a>
+
     </div>
 </div>
 
@@ -11,7 +11,7 @@
 <div class=id="questions">
     {{#each questions}}
     <div class="my-3">
-        <div class="card bg-light text-center rounded shadow">
+        <div class="border border-light text-center rounded shadow border-medium">
             {{!-- <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
@@ -26,7 +26,7 @@
     </ul>
   </div> --}}
             <div class="card-body">
-                <h4 class="card-title"><a class="text-dark" href="/questions/{{_id}}">{{title}}</a></h4>
+                <h4 class="card-title"><a class="text-secondary" href="/questions/{{_id}}">{{title}}</a></h4>
                 <p class="card-text">{{description}}</p>
                 <a href="/questions/{{_id}}" class="btn btn-outline-primary btn-sm">Answer Me!</a>
             </div>
