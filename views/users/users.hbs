@@ -1,8 +1,10 @@
-<div class="container">
+<div class=" text-center mt-3">
     <h2>All Users</h2>
-    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, exercitationem!</p>
 
-    <a href="/questions" class="btn btn-info">Questions</a>
+    <div class="mt-4">
+
+        <a href="/users/new" class="btn btn-outline-dark btn-sm">New User</a>
+    </div>
 </div>
 
 
@@ -11,20 +13,24 @@
     {{#each users}}
 
 
-    <div class="jumbotron jumbotron-fluid border shadow">
-        <div id="username">
-            {{username}}
+    <div class="my-5">
+        <div class="card bg-light text-center rounded shadow">
+            
+            
+            <div id="username">
+            <h4 class="card-title"><a class="text-dark" href="/users/{{_id}}">{{username}}</a></h4>
+
+            </div>
+
+            <div class="d-inline" id="userid">
+                <small class="text-muted">User ID: {{_id}}</small>
+            </div>
+            <form action="/users/{{_id}}?_method=DELETE" method="post">
+
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete User" />
+
+            </form>
         </div>
-
-        <div class="d-inline" id="userid">
-            <p>User ID: {{_id}}</p>
-        </div>
-        <form action="/users/{{_id}}?_method=DELETE" method="post">
-
-            <input class="btn btn-outline-danger" type="submit" value="Delete User" />
-
-        </form>
-
 
 
     </div>

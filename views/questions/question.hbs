@@ -1,26 +1,39 @@
-<a href="/questions">Back to Questions</a>
-<div class="jumbotron">
+<div class="my-3">
+    <div class="card bg-light text-center rounded shadow">
 
-    <h2>{{question.title}}</h2>
+        <div class="card-body">
+            <h4 class="card-title">{{question.title}}</h4>
+            <div id="description">
+                <p class="card-text">{{question.description}}</p>
+            </div>
+
+            <small class="text-muted">Quesiton ID: {{question._id}}</small>
 
 
-    <div id="description">
-        {{question.description}}
+            <small class="text-muted">Created at: {{question.createdAt}}</small>
+
+        </div>
     </div>
-    <div id="checkedTypoe">
-        {{question.checkedTypo}}
-    </div>
-
-    <div class="d-inline">
-        <p>Quesiton ID: {{question._id}}</p>
-    </div>
-
-    <p>Created at: {{question.createdAt}}</p>
+</div>
 
 
-    <a href="/questions/{{question._id}}/edit" class="btn btn-info"> Edit Question</a>
 
-    <a href="/questions/{{question._id}}/answers" class="btn btn-info">Answers</a>
+
+
+<div id="checkedTypoe">
+    {{question.checkedTypo}}
+</div>
+
+<div class="d-inline">
+    <p>Quesiton ID: {{question._id}}</p>
+</div>
+
+<p>Created at: {{question.createdAt}}</p>
+
+
+<a href="/questions/{{question._id}}/edit" class="btn btn-info"> Edit Question</a>
+
+<a href="/questions/{{question._id}}/answers" class="btn btn-info">Answers</a>
 </div>
 <a href="/questions/{{question._id}}/answers/new" class="btn btn-info"> Answer Question</a>
 
