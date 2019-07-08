@@ -6,7 +6,7 @@ A sorta kinda stackoverflow-type thing.
 
 
 ## Links to Deployed App and Project Board
-- [Deployed App](https://dashboard.heroku.com/apps/marvelous-mesa-verde-91770)
+- [Deployed App](https://marvelous-mesa-verde-91770.herokuapp.com/)
 - [Project Board](https://trello.com/b/LUwO7hux/sei-project-2)
 
 ## Wireframe

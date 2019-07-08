@@ -1,29 +1,40 @@
-<div class="jumbotron">
+<div class="card bg-light my-5">
+  <div class="container">
 
-  <h2>{{question.title}}</h2>
-  <div id="description">
-    {{question.description}}
-  </div>
-  <div id="checkedTypoe">
-    {{question.checkedTypo}}
-  </div>
+    <div class="my-3">
+      <div class="card bg-light border text-center rounded shadow">
 
-  <div class="d-inline">
-    <p>Quesiton ID: {{question._id}}</p>
-  </div>
-
-  <p>Created at: {{question.createdAt}}</p>
+        <div class="card-body">
+          <h4 class="card-title">{{question.title}}</h4>
+          <div id="description">
+            <p class="card-text">{{question.description}}</p>
+          </div>
+          <div class="">
+            <hr>
+            <small class="text-muted">Quesiton ID: {{question._id}}</small>
+          </div>
+          <div class="my-1">
+            <small class="text-muted">Created at: {{question.createdAt}}</small>
+          </div>
+        </div>
+      </div>
 </div>
-<form method="POST" action="/questions/{{question._id}}/answers">
 
 
 
-  <div class="form-group">
-    <label for="answer">Answer:</label>
-    <textarea class="form-control" name="answer" id="answer" cols="30" rows="10"></textarea>
+      <form method="POST" action="questions/{{questionId}}">
+      <div class="card bg-light border text-center rounded shadow">
+        <br>
+        <div class="form-group">
+          <label for="answer">Answer:</label>
+          <textarea class="form-control" name="answer" id="answer" cols="30" rows="10"></textarea>
 
+        </div>
+
+
+        <input type="submit" class="btn btn-outline-info" value="Submit Answer" />
+        </form>
+      </div>
+
+    </div>
   </div>
-
-
-  <input type="submit" class="btn btn-info" value="Submit Answer" />
-</form>
