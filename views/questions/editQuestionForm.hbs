@@ -4,32 +4,39 @@
 
   <div class="form-group">
     <label for="title">Question Title</label>
-    <input type="text" name="title" id="title" placeholder= "eg. How do I link two models in my API?" class="form-control" value="{{question.title}}">
-      <small class="text-muted">Boil it down to a one sentence question</small>
+    <input type="text" name="title" id="title" placeholder="eg. How do I link two models in my API?"
+      class="form-control" value="{{question.title}}">
+    <small class="text-muted">Boil it down to a one sentence question</small>
   </div>
+
   <div class="form-group">
-  <label for="description">Describe the problem:</label>
-  <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{question.description}}</textarea>
-  <small class="text-muted">Remember to do x and y</small>
-</div>
-<div class="form-group">
-<div class="form-check">
-  <input type="checkbox" class="form-check-input" name="checkedTypo" id="checkedTypo" value="true" {{#if question.checkedTypo}}checked{{/if}} />
-  <label for="checkedtypo" class="form-check-label">You've checked typos?</label>
-</div>
-</div>
-<div class="form-group">
-  <div class="custom-file">
-  <input type="file" name="" id="fileupload" class="custom-file-input">
-  <label for="fileupload" class="custom-file-label">Upload screenshot:</label>
-</div>
-</div>
+    <label for="description">Describe the problem:</label>
+    <textarea class="form-control" name="description" id="description" cols="30"
+      rows="10">{{question.description}}</textarea>
+    <small class="text-muted">Remember to do x and y</small>
+  </div>
+
+  <div class="form-group">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" name="checkedTypo" id="checkedTypo" value="true"
+        {{#if question.checkedTypo}}checked{{/if}} />
+      <label for="checkedtypo" class="form-check-label">You've checked typos?</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="custom-file">
+      <input type="file" name="" id="fileupload" class="custom-file-input">
+      <label for="fileupload" class="custom-file-label">Upload screenshot:</label>
+    </div>
+  </div>
+  
   <input type="submit" class="btn btn-info" value="Edit Question" />
 </form>
 
 
 <form action="/questions/{{question._id}}?_method=DELETE" method="post">
 
-<input class="btn btn-danger" type="submit" value="Delete Question" />
+  <input class="btn btn-danger" type="submit" value="Delete Question" />
 
 </form>
