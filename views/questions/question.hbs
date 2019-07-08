@@ -1,6 +1,6 @@
 <div class="card bg-light my-5">
     <div class="container">
-        <h4 class="card-title mt-3 text-center">Ask New Question</h4>
+
         <div class="my-3">
             <div class="card bg-light border text-center rounded shadow">
 
@@ -12,12 +12,13 @@
                     <div class="">
                         <small class="text-muted">Quesiton ID: {{question._id}}</small>
                     </div>
-                    <div class="">
+                    <div class="my-1">
                         <small class="text-muted">Created at: {{question.createdAt}}</small>
                     </div>
                     <a href="/questions/{{question._id}}/edit" class="btn btn-outline-info btn-sm"> Edit Question</a>
-                    <div>
-                        <a href="/questions/{{question._id}}/answers/new" class="btn btn-outline-info btn-sm">Answer Question</a>
+                    <div class="my-1">
+                        <a href="/questions/{{question._id}}/answers/new" class="btn btn-outline-info btn-sm">Answer
+                            Question</a>
                     </div>
 
 
@@ -37,9 +38,9 @@
 
 
 
-
-        <h4><a href="/questions/{{question._id}}/answers">Answers</a></h4>
-
+        <div class="my-1 text-center">
+            <h4><a href="/questions/{{question._id}}/answers" class="text-dark text-center">Answers</a></h4>
+        </div>
 
     </div>
     {{#each answers}}
