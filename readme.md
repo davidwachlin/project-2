@@ -5,6 +5,8 @@ Pestr
 
 A sorta kinda stackoverflow-type thing.
 
+## ERD
+![Image](images/erdplus-diagram.png?raw=true)
 
 ## Links to Deployed App and Project Board
 - [Deployed App](https://marvelous-mesa-verde-91770.herokuapp.com/)
@@ -16,8 +18,7 @@ A sorta kinda stackoverflow-type thing.
 ![Image](images/wireframe3.png?raw=true)
 
 
-## ERD
-![Image](images/erdplus-diagram.png?raw=true)
+
 
 
 
